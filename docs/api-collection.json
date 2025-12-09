@@ -1,0 +1,57 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "Ecommerce API",
+  "requests": [
+    {
+      "name": "Register User",
+      "method": "POST",
+      "url": "http://localhost:3000/api/auth/register",
+      "body": {
+        "name": "Test User",
+        "email": "test@test.com",
+        "password": "123456"
+      }
+    },
+    {
+      "name": "Login User",
+      "method": "POST",
+      "url": "http://localhost:3000/api/auth/login",
+      "body": {
+        "email": "test@test.com",
+        "password": "123456"
+      }
+    },
+    {
+      "name": "Create Product (Admin)",
+      "method": "POST",
+      "url": "http://localhost:3000/api/products/create",
+      "headers": {
+        "Authorization": "Bearer {{TOKEN}}"
+      },
+      "body": {
+        "name": "Laptop",
+        "price": 50000,
+        "description": "Gaming laptop",
+        "stock": 10
+      }
+    },
+    {
+      "name": "Get All Products",
+      "method": "GET",
+      "url": "http://localhost:3000/api/products/all"
+    },
+    {
+      "name": "Place Order",
+      "method": "POST",
+      "url": "http://localhost:3000/api/orders/create",
+      "headers": {
+        "Authorization": "Bearer {{TOKEN}}"
+      },
+      "body": {
+        "items": [
+          { "productId": 1, "quantity": 2 }
+        ]
+      }
+    }
+  ]
+}
